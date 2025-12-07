@@ -81,5 +81,111 @@ Hanya dalam 3 detik, NexTrade menghasilkan **email penawaran profesional** yang 
 ## 📦 Struktur Folder Proyek
 
 ### 🖥️ Frontend (Next.js)
+```
 
-frontend/ ├── app/ │   ├── analyze/           ← Halaman hasil analisis │   ├── page.jsx            ← Halaman utama (landing page) │ ├── components/ │   ├── analyze/           ← Komponen khusus halaman analisis │   ├── faq/                ← FAQ │   ├── hero/               ← Bagian utama (Hero) │   ├── showcase/           ← Demo fitur │ ├── public/ │   ├── demo.png            ← Screenshot demo │   ├── logo.svg
+frontend/
+├── app/
+│   ├── analyze/           ← Halaman hasil analisis
+│   ├── page.jsx            ← Halaman utama (landing page)
+│
+├── components/
+│   ├── analyze/           ← Komponen khusus halaman analisis
+│   ├── faq/                ← FAQ
+│   ├── hero/               ← Bagian utama (Hero)
+│   ├── showcase/           ← Demo fitur
+│
+├── public/
+│   ├── demo.png            ← Screenshot demo
+│   ├── logo.svg
+
+```
+
+### 🐍 Backend (FastAPI)
+```
+
+backend/
+├── ai\_engine.py            ← Logika inti AI (insight & email generation)
+├── main.py                 ← Entry point server FastAPI
+├── utils.py                ← Helper functions
+├── WtoQrlst.py             ← Modul scraping data WTO
+├── wtoSearcheping.py       ← Parser data ePing
+├── data/                   ← Dataset lokal
+├── requirements.txt
+
+````
+
+---
+
+## 🔧 Cara Instalasi & Menjalankan Proyek (Integrated)
+
+Pastikan Anda telah menginstal **Python 3.10+** (untuk *backend*) dan **Node.js 18+** (untuk *frontend*).
+
+### A. Persiapan Backend (FastAPI)
+
+1.  **Arahkan ke Direktori Backend:**
+    ```bash
+    cd backend-export-intel
+    ```
+
+2.  **Instal Dependensi Python:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3.  **Konfigurasi Environment:**
+    Buat file `.env` di direktori `backend-export-intel/` dan isi dengan kunci API Anda:
+    ```
+    KOLOSAL_API_KEY=...
+    COMTRADE_KEY=...
+    WTO_API_KEY=...
+    ```
+
+4.  **Jalankan Server Backend:**
+    ```bash
+    python main.py
+    ```
+    Backend akan berjalan dan siap menerima permintaan di **[http://localhost:8000](http://localhost:8000)**.
+
+### B. Persiapan Frontend (Next.js)
+
+1.  **Pindah Direktori ke Frontend:**
+    ```bash
+    # Kembali ke root project, lalu masuk ke direktori frontend
+    cd ../nextrade-hackaton
+    ```
+
+2.  **Instal Dependensi Node.js:**
+    ```bash
+    npm install
+    ```
+
+3.  **Jalankan Aplikasi Frontend:**
+    ```bash
+    npm run dev
+    ```
+    Frontend akan tersedia di browser Anda di **[http://localhost:3000](http://localhost:3000)**.
+
+> ℹ️ **Catatan:** Pastikan server backend (`localhost:8000`) sudah berjalan sebelum Anda mencoba mengakses fitur utama di frontend (`localhost:3000`), karena frontend bergantung pada API untuk mendapatkan data analisis.
+
+---
+
+## 🛡️ Keamanan & Kestabilan
+
+Kami membangun sistem ini dengan memprioritaskan stabilitas data:
+
+* ✔ **Fallback Logic:** Jika API UN Comtrade mencapai batas *rate limit*, sistem secara otomatis beralih menggunakan *Custom Simulation Engine* internal.
+* ✔ **Error-Handling:** Penanganan respons data WTO/ePing yang sering tidak konsisten (JSON/HTML).
+* ✔ **Rate-Limit Prevention:** Implementasi *batching* untuk mengurangi permintaan *real-time* ke LLM/AI.
+* ✔ **Deployment:** Arsitektur yang siap untuk deployment dengan HTTPS.
+
+---
+
+## 🏆 Mengapa NexTrade Layak Menang?
+
+NexTrade bukan hanya *proof-of-concept*, tapi solusi yang **berfungsi penuh** dan **dapat ditindaklanjuti (actionable)**:
+
+1.  **Relevansi Sosial:** Memberikan solusi nyata terhadap masalah esensial yang dihadapi UMKM Indonesia dalam mencapai pasar global.
+2.  **Integrasi Data Kompleks:** Berhasil mengintegrasikan 3 sumber data utama yang berbeda (AI, Data Perdagangan, Regulasi WTO) menjadi satu alur kerja yang mulus.
+3.  **User Experience (UX):** Tampilan modern, interaktif, dan hasil yang disajikan dalam format kartu ringkas, membuatnya sangat mudah dipahami oleh pengguna awam sekalipun.
+4.  **Actionable Output:** Menghasilkan output yang langsung bisa digunakan (email penawaran) untuk *pitching* ke ITPC atau calon *buyer*.
+````
