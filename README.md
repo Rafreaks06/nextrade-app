@@ -81,3 +81,5 @@ Hanya dalam 3 detik, NexTrade menghasilkan **email penawaran profesional** yang 
 ## 📦 Struktur Folder Proyek
 
 ### 🖥️ Frontend (Next.js)
+
+frontend/ ├── app/ │   ├── analyze/           ← Halaman hasil analisis │   ├── page.jsx            ← Halaman utama (landing page) │ ├── components/ │   ├── analyze/           ← Komponen khusus halaman analisis │   ├── faq/                ← FAQ │   ├── hero/               ← Bagian utama (Hero) │   ├── showcase/           ← Demo fitur │ ├── public/ │   ├── demo.png            ← Screenshot demo │   ├── logo.svg
