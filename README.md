@@ -1,1 +1,83 @@
-"# Nextrade App" 
+# 🌍 NEXTRADE — AI Export Intelligence Platform
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+> **“Membantu UMKM Indonesia menembus pasar ekspor hanya dengan satu klik.”**
+
+NexTrade adalah platform **AI Export Intelligence** yang dirancang untuk memberdayakan Usaha Mikro, Kecil, dan Menengah (UMKM) Indonesia. Kami menggabungkan data perdagangan global dari **UN Comtrade**, regulasi **WTO**, dan kemampuan **Generative AI** untuk menyajikan peluang ekspor yang cepat, akurat, dan mudah dipahami.
+
+Cukup masukkan nama produk Anda, dan NexTrade akan memberikan analisis lengkap, mulai dari negara target yang cocok, potensi profit, harga global, risiko regulasi, hingga membuat **email penawaran profesional** secara instan.
+
+---
+
+## 🚀 Mengapa NexTrade Penting?
+
+Banyak UMKM Indonesia yang gagal menembus pasar global karena hambatan informasi:
+
+* ❌ **Ketidakpastian Pasar:** Tidak tahu negara mana yang memiliki *demand* (permintaan) tinggi.
+* ❌ **Regulasi & Kode:** Kesulitan memahami **HS Code** dan aturan ekspor–impor.
+* ❌ **Data Harga:** Tidak punya akses data harga kompetitif di pasar global.
+* ❌ **Komunikasi:** Tidak percaya diri dalam menyusun email penawaran ke *buyer* luar negeri.
+
+**NexTrade mengatasi semua tantangan ini dalam satu platform yang terintegrasi.**
+
+---
+
+## ✨ Fitur Utama
+
+### 1. 🧠 AI Product Understanding
+Ketik nama produk apapun (misalnya: "rotan mentah", "cabai merah", "batu bara"), dan AI akan segera:
+* ✔ Mengidentifikasi **HS Code** yang relevan.
+* ✔ Menentukan kategori dan konteks industri produk ekspor.
+
+### 2. 🗺️ Smart Market Finder
+Analisis data impor dari 200+ negara menggunakan UN Comtrade untuk menemukan target pasar terbaik:
+* ✔ Negara dengan **demand tertinggi** dan potensi pertumbuhan.
+* ✔ Volume impor, tren historis, dan industri pengguna produk tersebut.
+
+### 3. 💸 Profit Calculator (Mode Kalkulasi)
+Bandingkan harga jual Anda dengan harga pasar global (USD) secara *real-time*:
+* ✔ Indikator profit: **HIGH PROFIT / MODERATE / LOSS**.
+* ✔ Perhitungan margin otomatis (FOB/CIF).
+* ✔ Visualisasi jalur ekspor (Arc Map) yang interaktif.
+
+### 4. 📜 WTO Regulation Check
+Cek regulasi impor negara tujuan untuk memitigasi risiko:
+* ✔ Larangan impor yang berlaku.
+* ✔ Persyaratan **SPS** (Sanitary and Phytosanitary) & **TBT** (Technical Barriers to Trade).
+* ✔ Informasi mengenai *Restrictions* dan *Quota*.
+
+### 5. 💡 AI Market Insight
+Hasil analisis disajikan dalam kartu ringkas untuk pemahaman instan:
+* **Market Demand:** Seberapa besar peluang di negara target.
+* **Price Target:** Rekomendasi harga jual global.
+* **Regulatory Check:** Status kepatuhan regulasi.
+* **Verdict & Recommendation:** Kesimpulan dan langkah selanjutnya yang harus diambil.
+
+### 6. 📧 Auto-Generated Export Email
+Hanya dalam 3 detik, NexTrade menghasilkan **email penawaran profesional** yang siap dikirim:
+* ✔ Disusun dalam Bahasa Inggris bisnis yang formal.
+* ✔ Berisi ringkasan harga, volume, dan keunggulan produk.
+* ✔ **Tinggal *copy–paste*** ke calon *buyer* atau ITPC.
+
+---
+
+## 🧱 Tech Stack
+
+| Kategori | Teknologi | Deskripsi |
+| :--- | :--- | :--- |
+| **Frontend** | Next.js 14 (App Router) | Kerangka kerja React untuk performa tinggi. |
+| | TailwindCSS | Utilitas CSS untuk desain responsif dan cepat. |
+| | Framer Motion | Library untuk animasi dan interaksi yang mulus. |
+| | Deck.gl (ArcLayer) & MapLibre GL | Visualisasi data geo-spasial dan pemetaan interaktif. |
+| **Backend** | FastAPI (Python) | API modern, cepat, dan berperforma tinggi. |
+| | UN Comtrade API | Sumber data perdagangan impor/ekspor global. |
+| | WTO / ePing Scraper | Mengambil data regulasi teknis dan non-teknis. |
+| | HuggingFace Transformers / LLM | Engine AI Generatif untuk *insight* dan pembuatan email. |
+| | Custom Simulation Engine | Mekanisme *fallback* saat batas API Comtrade tercapai. |
+
+---
+
+## 📦 Struktur Folder Proyek
+
+### 🖥️ Frontend (Next.js)
