@@ -1,0 +1,6 @@
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/Rafreaks06/nextrade-hackaton
+[submodule "backend"]
+	path = backend
+	url = https://github.com/Rafreaks06/backend-export-intel
